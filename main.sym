@@ -1,0 +1,84 @@
+.label sprite_cap=$880
+.label hit_inside_arc=$1136
+.label copyToScreen=$1274 {
+  .label loop=$1276
+  .label loop4=$12a0
+  .label loop2=$1284
+  .label loop3=$1292
+}
+.label sprite_y_next_angle=$1a6d
+.label outer_chars_lo=$1465
+.label init=$1000
+.label updateHiscore=$131e {
+  .label l100=$133a
+  .label l10=$133f
+}
+.label loop1=$1359
+.label set_space_mesage_color=$1355
+.label new_arc=$10f5
+.label end_angle=$1197
+.label randomGenerator=$1266 {
+  .label noEor=$1271
+  .label doEor=$126f
+}
+.label sprite_y_angle=$1a6b
+.label check_x_gt_start_angle=$1127
+.label fillColor=$12ac
+.label inner_chars_lo=$1865
+.label lost_game=$1146
+.label setPositionEndCap=$11e1 {
+}
+.label updateScore=$12f6 {
+  .label l100=$1303
+  .label l10=$1308
+}
+.label menu=$10d4
+.label main_loop=$1103
+.label draw_arc=$116e
+.label sprite_x_next_angle=$1969
+.label copyToScreenColor=$12bf {
+  .label loop=$12c1
+  .label loop4=$12eb
+  .label loop2=$12cf
+  .label loop3=$12dd
+}
+.label middle_chars_hi=$1565
+.label start_angle=$1186
+.label sprite_player=$8c0
+.label screen=$1b75
+.label sprite_x_angle=$1967
+.label sprite_x_prev_angle=$1965
+.label outer_chars_hi=$1365
+.label skip_dec_inmunity=$110e
+.label space_text_color=$1358
+.label irqMusic=$1162
+.label hideCircle=$1236 {
+  .label setmem_outer=$125c
+  .label setmem_inner=$1262
+  .label setmem_middle=$125f
+}
+.label spacebar_color_ramp=$1b6d
+.label clear_circle=$119e {
+  .label clear_loop=$11a8
+}
+.label draw_arc_loop=$1192
+.label skip_by_inmunity=$1124
+.label next=$113f
+.label draw_arc_with_start_and_end_angle=$1185
+.label setPositionStartCap=$11bc {
+}
+.label loop_wait=$10d6
+.label fill_color_memory=$12ab
+.label newHiscore=$1151
+.label inner_chars_hi=$1765
+.label setPositionPlayer=$11af {
+}
+.label start=$10e5
+.label sprite_y_prev_angle=$1a69
+.label showCircle=$1206 {
+  .label setmem_outer=$122c
+  .label setmem_inner=$1232
+  .label setmem_middle=$122f
+}
+.label loop_menu=$10de
+.label middle_chars_lo=$1665

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://js-animation-awwwards-course.georgi-nikolov.com/04-circular-movement.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 - Circular movement</title>
+
+  <style>
+      
+    * { margin: 0; padding: 0; }
+
+    body {
+      width: 100vw;
+      /*height: 100vh;*/
+      display: flex;
+      justify-content: center;
+      /*align-items: center;*/
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    #go-back {
+      position: fixed;
+      top: 1em;
+      left: 1em;
+    }
+
+    #canvas {
+      border:  1px solid green;
+      position:  relative;
+      top: -100px;
+    }
+
+    .bg-image {
+      width:  640px;
+      height:  400px;
+      display:  block;
+      border:  1px solid red;
+      position: absolute;
+      top: 50px;
+    }
+
+/*    .positions {
+      width: 640px;
+    }*/
+
+  </style>
+
+</head>
+<body>
+  <div id="container">
+    <h1>Looptap tables</h1>
+    <div style="height: 100px">TEST</div>
+    <img class="bg-image" src="assets/c64grid.png" />
+    <canvas id="canvas"></canvas>
+
+    <h2>Sprite Positions</h2>
+    <div class="sprite-positions positions">
+      <div id="sprite-positions"></div>
+    </div>
+
+    <h2>Character Positions</h2>
+    <div class="char-positions positions">
+      <h3>Outer hi</h3>
+      <div id="char-positions"></div>
+      <h3>Outer lo</h3>
+      <div id="char-positions12"></div>
+      <h3>Middle hi</h3>
+      <div id="char-positions2"></div>
+      <h3>Middle lo</h3>
+      <div id="char-positions22"></div>
+      <h3>Inner hi</h3>
+      <div id="char-positions3"></div>
+      <h3>Inner lo</h3>
+      <div id="char-positions32"></div>
+    </div>
+
+  </div>
+
+  <script>
+
+    // ------- Initialization -------
+    const CANVAS_WIDTH = 320
+    const CANVAS_HEIGHT = 200
+
+    const canvas = document.getElementById('canvas')
+    var spritePositionsValues = "";
+    const $spritePositions = document.getElementById('sprite-positions')
+
+    var charPositionsValues1 = "";
+    var charPositionsValues12 = "";
+
+    var charPositionsValues2 = "";
+    var charPositionsValues22 = "";
+
+    var charPositionsValues3 = "";
+    var charPositionsValues32 = "";
+
+    const $charPositions1 = document.getElementById('char-positions')
+    const $charPositions12 = document.getElementById('char-positions12')
+    const $charPositions2 = document.getElementById('char-positions2')
+    const $charPositions22 = document.getElementById('char-positions22')
+    const $charPositions3 = document.getElementById('char-positions3')
+    const $charPositions32 = document.getElementById('char-positions32')
+
+
+    const dpr = devicePixelRatio
+    canvas.width = CANVAS_WIDTH * devicePixelRatio
+    canvas.height = CANVAS_HEIGHT * devicePixelRatio
+    canvas.style.setProperty('width', CANVAS_WIDTH * 2 + 'px')
+    canvas.style.setProperty('height', CANVAS_HEIGHT * 2 + 'px')
+
+    const ctx = canvas.getContext('2d')
+    const image = new Image()
+    image.onload = function () {
+      // requestAnimationFrame(drawFrame)
+      setTimeout(() => drawFrame(), 32)
+    }
+    image.src = 'assets/c64grid.png'
+
+    let angle = 0;
+
+    // ------- Render Loop -------
+    function drawFrame (ts) {
+      // clear our canvas contents
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.drawImage(image, 0, 0)
+      
+
+      // Lines
+      ctx.lineWidth = 1
+      ctx.strokeStyle = 'white'
+
+      ctx.fillStyle = '#FF0080'
+      const circleX = 132
+      const circleY = 100
+      const circleRadius0 = 81
+      const circleRadius1 = 90
+      const circleRadius2 = 99
+
+      const circleStartAngle = 0
+      const circleEndAngle = Math.PI * 2
+      const circleCounterclockwise = false
+
+      //const angle = ts * 2
+      angle += (Math.PI * 2) / 256
+
+
+      const moveX = Math.round(circleX - Math.cos(angle) * circleRadius1)
+      const moveY = Math.round(circleY - Math.sin(angle) * circleRadius1)
+
+      const charX0 = Math.floor((Math.round(circleX - Math.cos(angle) * circleRadius0)) / 8) 
+      const charY0 = Math.floor((Math.round(circleY - Math.sin(angle) * circleRadius0)) / 8) 
+
+      const charX1 = Math.floor(moveX / 8) 
+      const charY1 = Math.floor(moveY / 8) 
+
+      const charX2 = Math.floor((Math.round(circleX - Math.cos(angle) * circleRadius2)) / 8) 
+      const charY2 = Math.floor((Math.round(circleY - Math.sin(angle) * circleRadius2)) / 8) 
+
+      drawChar(ctx, charX0, charY0)
+      drawChar(ctx, charX1, charY1)
+      drawChar(ctx, charX2, charY2)
+
+      ctx.beginPath()
+      ctx.moveTo(132, 100)
+      ctx.lineTo(moveX, moveY)
+      ctx.closePath()
+      ctx.stroke()      
+
+      ctx.beginPath()
+      ctx.arc(moveX, moveY, 1, circleStartAngle, circleEndAngle, circleCounterclockwise)
+      ctx.fill()
+
+
+      // logSprite(moveX - 10,moveY - 10)
+      logChar(charX0, charY0, charX1, charY1, charX2, charY2)
+
+      if(angle < Math.PI * 2) {
+        // requestAnimationFrame(drawFrame)
+        setTimeout(() => drawFrame(), 0)
+      }
+    }
+
+    function drawChar(ctx, x,y) {
+      ctx.globalAlpha = 0.5;
+      ctx.fillRect(x * 8, y * 8, 8, 8)
+      ctx.globalAlpha = 0.8;
+      ctx.strokeRect(x * 8, y * 8, 8, 8)
+      ctx.globalAlpha = 1;
+    }
+
+    function logSprite(x,y) {
+      x += 22
+      y += 50
+      spritePositionsValues += `\$${x.toString(16)}, \$${y.toString(16)} <br />`
+      $spritePositions.innerHTML = spritePositionsValues
+
+      // charPositionsValues += `\$${y.toString(16)}, `
+      // $charPositions.innerHTML = charPositionsValues
+
+    }
+
+
+
+    function logChar(x0,y0, x1,y1, x2,y2) {
+      //const baseMemory = 33792
+      const baseMemory = 55296
+
+      const mem0 = (baseMemory + (40 * y0) + x0).toString(16)
+      const mem0_hi = mem0.substr(0,2)
+      const mem0_lo = mem0.substr(2,2)
+
+      const mem1 = (baseMemory + (40 * y1) + x1).toString(16)
+      const mem1_hi = mem1.substr(0,2)
+      const mem1_lo = mem1.substr(2,2)
+      
+      const mem2 = (baseMemory + (40 * y2) + x2).toString(16)
+      const mem2_hi = mem2.substr(0,2)
+      const mem2_lo = mem2.substr(2,2)
+
+      charPositionsValues1 += `\$${mem0_hi}, `
+      charPositionsValues12 += `\$${mem0_lo}, `
+
+      charPositionsValues2 += `\$${mem1_hi}, `
+      charPositionsValues22 += `\$${mem1_lo}, `
+
+      charPositionsValues3 += `\$${mem2_hi}, `
+      charPositionsValues32 += `\$${mem2_lo}, `
+
+      $charPositions1.innerHTML = charPositionsValues1
+      $charPositions12.innerHTML = charPositionsValues12
+      $charPositions2.innerHTML = charPositionsValues2
+      $charPositions22.innerHTML = charPositionsValues22
+      $charPositions3.innerHTML = charPositionsValues3
+      $charPositions32.innerHTML = charPositionsValues32
+    }
+
+
+  </script>
+  
+
+</body></html>

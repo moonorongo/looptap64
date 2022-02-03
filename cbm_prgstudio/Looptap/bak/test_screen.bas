@@ -1,0 +1,25 @@
+1000 PRINT "               {reverse on}{cyan}   {reverse off}                      ";
+1010 PRINT "            {reverse on}         {reverse off}                   ";
+1020 PRINT "          {reverse on}   {reverse off}       {reverse on}   {reverse off}                 ";
+1030 PRINT "         {reverse on}  {reverse off}           {reverse on}  {reverse off}                ";
+1040 PRINT "        {reverse on}  {reverse off}             {reverse on}  {reverse off}               ";
+1050 PRINT "       {reverse on}  {reverse off}               {reverse on}  {reverse off}              ";
+1060 PRINT "      {reverse on}  {reverse off}                 {reverse on}  {reverse off}             ";
+1070 PRINT "      {reverse on} {reverse off}                   {reverse on} {reverse off}             ";
+1080 PRINT "     {reverse on}  {reverse off}                   {reverse on}  {reverse off}            ";
+1090 PRINT "     {reverse on} {reverse off}                     {reverse on} {reverse off}            ";
+1100 PRINT "     {reverse on} {reverse off}                     {reverse on} {reverse off}            ";
+1110 PRINT "    {reverse on}  {reverse off}                     {reverse on}  {reverse off}           ";
+1120 PRINT "    {reverse on}  {reverse off}                     {reverse on}  {reverse off}           ";
+1130 PRINT "    {reverse on}  {reverse off}                     {reverse on}  {reverse off}           ";
+1140 PRINT "     {reverse on} {reverse off}                     {reverse on} {reverse off}            ";
+1150 PRINT "     {reverse on} {reverse off}                     {reverse on} {reverse off}            ";
+1160 PRINT "     {reverse on}  {reverse off}                   {reverse on}  {reverse off}            ";
+1170 PRINT "      {reverse on} {reverse off}                   {reverse on} {reverse off}             ";
+1180 PRINT "      {reverse on}  {reverse off}                 {reverse on}  {reverse off}             ";
+1190 PRINT "       {reverse on}  {reverse off}               {reverse on}  {reverse off}              ";
+1200 PRINT "        {reverse on}  {reverse off}             {reverse on}  {reverse off}               ";
+1210 PRINT "         {reverse on}  {reverse off}           {reverse on}  {reverse off}                ";
+1220 PRINT "          {reverse on}   {reverse off}       {reverse on}   {reverse off}                 ";
+1230 PRINT "          DC{reverse on}         {reverse off}                   ";
+1240 PRINT "            BA@{reverse on}   {reverse off}                      "
