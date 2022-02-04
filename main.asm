@@ -8,6 +8,7 @@ BasicUpstart2(init)
 */
 
 #import "inc/const.asm"
+#import "inc/macros.asm"
 #import "inc/sprites.asm"	
 
 *=$1000 "Main"
@@ -19,8 +20,8 @@ init:
     lda #$00
     ldx #0
     ldy #0
-    lda #music.startSong-1
-    jsr music.init
+//    lda #music.startSong-1
+//    jsr music.init
 
     sei
     lda #<irqMusic
@@ -76,7 +77,7 @@ init:
 	stx end_angle
 	jsr draw_arc_with_start_and_end_angle
 
-	// set first position
+	// set player initial position 
 	ldx #128
 	jsr setPositionPlayer
 
@@ -94,9 +95,9 @@ init:
 	jsr copyToScreenColor
 
     // show "space to start" message
-	lda #1
-	sta space_text_color
-	jsr set_space_mesage_color
+	//lda #1
+	//sta space_text_color
+	//jsr set_space_mesage_color
 
 	// enable screen
 	lda screen_control1
@@ -109,11 +110,14 @@ menu:
 
 
 loop_wait:
-#import "inc/wait_retrace.asm"	
+	waitRetrace()
 	dex
 	bne loop_wait
 
-loop_menu:	
+	ldy #0 // reset ramp index color 
+loop_menu:
+	jsr ramp_cycle_color // space to start color cycle
+
     lda joy_player      
 	and #16 
 	bne loop_menu
@@ -145,7 +149,7 @@ new_arc:
 	sty inmunity
 
 main_loop:
-	#import "inc/wait_retrace.asm"	
+	waitRetrace()
 
 	// check inmunity for decrement
 	ldy inmunity
@@ -208,18 +212,11 @@ newHiscore:
 	stx hiscore
 	jsr updateHiscore
 
-    // show "space to start" message
-	lda #1
-	sta space_text_color
-	jsr set_space_mesage_color
-
 	jmp menu
 
 irqMusic:
         asl $d019
-        //inc $d020
-        jsr music.play 
-        //dec $d020
+        // jsr music.play 
         pla
         tay
         pla
@@ -247,8 +244,8 @@ screen:
 *=$3800 "Charset"
 .import binary "assets/charset.bin"
 
-*=music.location "Music"
-.fill music.size, music.getData(i)
+//*=music.location "Music"
+//.fill music.size, music.getData(i)
 
 .print ""
 .print "SID Data"

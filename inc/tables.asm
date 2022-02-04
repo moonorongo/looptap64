@@ -33,4 +33,4 @@ sprite_y_next_angle:
 
 // color ramp
 spacebar_color_ramp: 
-	.byte 15, 1, 15, 12, 11, 0, 11, 12
+	.byte 15, 12, 11, 0, 11, 12

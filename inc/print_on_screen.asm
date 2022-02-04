@@ -101,3 +101,32 @@ loop1:
     bne loop1
     rts
 
+
+
+ramp_cycle_color:
+{
+    // save Y value..
+    tya
+    pha 
+
+    lda #48
+loop:    
+    waitRetrace() // ...because this macro use Y register...
+    sbc #1
+    bne loop
+
+    // restore Y value
+    pla
+    tay
+
+    lda spacebar_color_ramp,y
+    sta space_text_color
+    jsr set_space_mesage_color
+    iny
+    cpy #5
+    bne exit
+    
+    ldy #0 // reset index cycle color
+exit:
+    rts
+}
