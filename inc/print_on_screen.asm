@@ -8,6 +8,7 @@ updateScore:
     pha
 
     lda score   // get score
+    //lda start_angle // for testing only
 
     ldy #$2f      
     ldx #$3a      
@@ -57,6 +58,7 @@ updateHiscore:
     stx hiscore_c - 2
 
     lda hiscore // get score
+    // lda end_angle // for testing only
 
     ldy #$2f      
     ldx #$3a      
@@ -111,7 +113,7 @@ ramp_cycle_color:
 
     lda #48
 loop:    
-    waitRetrace() // ...because this macro use Y register...
+    waitRetrace() // ...because this macro uses Y register...
     sbc #1
     bne loop
 

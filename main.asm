@@ -3,6 +3,9 @@ BasicUpstart2(init)
 
 /*
 	MEJORAR LIMPIEZA/REDIBUJADO DE CIRCULO
+	  armar una tabla de posiciones seguras
+	  y que la rutina random elija esas posiciones
+	  y a la mierda
 
 	y ya con esto estaria
 */
@@ -20,8 +23,8 @@ init:
     lda #$00
     ldx #0
     ldy #0
-//    lda #music.startSong-1
-//    jsr music.init
+    lda #music.startSong-1
+    jsr music.init
 
     sei
     lda #<irqMusic
@@ -190,6 +193,10 @@ check_x_gt_start_angle:
 	jmp lost_game // lost game !
 
 hit_inside_arc: 
+	// previene varios hits de un solo golpe
+	ldy inmunity
+	bne skip_by_inmunity
+
 	inc score
 	jsr updateScore
 
@@ -216,7 +223,7 @@ newHiscore:
 
 irqMusic:
         asl $d019
-        // jsr music.play 
+        jsr music.play 
         pla
         tay
         pla
@@ -244,9 +251,10 @@ screen:
 *=$3800 "Charset"
 .import binary "assets/charset.bin"
 
-//*=music.location "Music"
-//.fill music.size, music.getData(i)
+*=music.location "Music"
+.fill music.size, music.getData(i)
 
+/*
 .print ""
 .print "SID Data"
 .print "--------"
@@ -269,3 +277,5 @@ screen:
 .print "speed="+toBinaryString(music.speed)
 .print "startpage="+music.startpage
 .print "pagelength="+music.pagelength
+
+*/

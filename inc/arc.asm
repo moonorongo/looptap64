@@ -1,6 +1,7 @@
 draw_arc:
     jsr randomGenerator
-	ldx random_ptr 
+    ldx random_ptr 
+	//ldx #253
 	stx start_angle
 
 	jsr randomGenerator
@@ -8,6 +9,7 @@ draw_arc:
 	and #63 // 00011111 (0 - 63)
 	adc #$01 // 1 - 64 (0 gives an error)
 	adc start_angle
+	//lda #38
 	sta end_angle
 
 draw_arc_with_start_and_end_angle:
@@ -30,7 +32,7 @@ draw_arc_loop:
 	
 	rts
 
-/*
+
 clear_circle:
 {
 	ldx start_angle
@@ -47,8 +49,9 @@ clear_loop:
 	bne clear_loop	
 	rts
 }
-*/
 
+
+/*
 clear_circle:
 {
 	ldx #00
@@ -64,3 +67,4 @@ clear_loop:
 	bne clear_loop	
 	rts
 }
+*/

@@ -1,91 +1,92 @@
 .label sprite_cap=$880
-.label hit_inside_arc=$112e
-.label copyToScreen=$1261 {
-  .label loop=$1263
-  .label loop4=$128d
-  .label loop2=$1271
-  .label loop3=$127f
+.label hit_inside_arc=$1133
+.label copyToScreen=$1270 {
+  .label loop=$1272
+  .label loop4=$129c
+  .label loop2=$1280
+  .label loop3=$128e
 }
-.label sprite_y_next_angle=$1a7a
-.label outer_chars_lo=$1472
+.label sprite_y_next_angle=$1a89
+.label outer_chars_lo=$1481
 .label init=$1000
-.label updateHiscore=$130b {
-  .label l100=$1327
-  .label l10=$132c
+.label updateHiscore=$131a {
+  .label l100=$1336
+  .label l10=$133b
 }
-.label loop1=$1346
-.label set_space_mesage_color=$1342
-.label new_arc=$10ed
-.label end_angle=$1184
-.label randomGenerator=$1253 {
-  .label noEor=$125e
-  .label doEor=$125c
+.label loop1=$1355
+.label set_space_mesage_color=$1351
+.label new_arc=$10f2
+.label end_angle=$1190
+.label randomGenerator=$1262 {
+  .label noEor=$126d
+  .label doEor=$126b
 }
-.label sprite_y_angle=$1a78
-.label check_x_gt_start_angle=$111f
-.label fillColor=$1299
-.label inner_chars_lo=$1872
-.label lost_game=$113e
-.label setPositionEndCap=$11ce {
+.label sprite_y_angle=$1a87
+.label check_x_gt_start_angle=$1124
+.label fillColor=$12a8
+.label inner_chars_lo=$1881
+.label lost_game=$1147
+.label setPositionEndCap=$11dd {
 }
-.label updateScore=$12e3 {
-  .label l100=$12f0
-  .label l10=$12f5
+.label updateScore=$12f2 {
+  .label l100=$12ff
+  .label l10=$1304
 }
-.label menu=$10c7
-.label main_loop=$10fb {
+.label menu=$10cc
+.label main_loop=$1100 {
 }
-.label draw_arc=$115b
-.label sprite_x_next_angle=$1976
-.label copyToScreenColor=$12ac {
-  .label loop=$12ae
-  .label loop4=$12d8
-  .label loop2=$12bc
-  .label loop3=$12ca
+.label draw_arc=$1167
+.label sprite_x_next_angle=$1985
+.label copyToScreenColor=$12bb {
+  .label loop=$12bd
+  .label loop4=$12e7
+  .label loop2=$12cb
+  .label loop3=$12d9
 }
-.label middle_chars_hi=$1572
-.label start_angle=$1173
+.label middle_chars_hi=$1581
+.label start_angle=$117f
 .label sprite_player=$8c0
-.label screen=$1b80
-.label sprite_x_angle=$1974
-.label sprite_x_prev_angle=$1972
-.label outer_chars_hi=$1372
-.label skip_dec_inmunity=$1106
-.label space_text_color=$1345
-.label irqMusic=$1152
-.label hideCircle=$1223 {
-  .label setmem_outer=$1249
-  .label setmem_inner=$124f
-  .label setmem_middle=$124c
+.label screen=$1b8f
+.label sprite_x_angle=$1983
+.label sprite_x_prev_angle=$1981
+.label outer_chars_hi=$1381
+.label skip_dec_inmunity=$110b
+.label space_text_color=$1354
+.label irqMusic=$115b
+.label hideCircle=$1232 {
+  .label setmem_outer=$1258
+  .label setmem_inner=$125e
+  .label setmem_middle=$125b
 }
-.label spacebar_color_ramp=$1b7a
-.label clear_circle=$118b {
-  .label clear_loop=$1195
+.label spacebar_color_ramp=$1b89
+.label clear_circle=$1197 {
+  .label clear_loop=$11a2
+  .label end_angle=$11a7
 }
-.label draw_arc_loop=$117f
-.label skip_by_inmunity=$111c
-.label next=$1137
-.label draw_arc_with_start_and_end_angle=$1172
-.label setPositionStartCap=$11a9 {
+.label draw_arc_loop=$118b
+.label skip_by_inmunity=$1121
+.label next=$1140
+.label draw_arc_with_start_and_end_angle=$117e
+.label setPositionStartCap=$11b8 {
 }
-.label loop_wait=$10c9 {
+.label loop_wait=$10ce {
 }
-.label fill_color_memory=$1298
-.label newHiscore=$1149
-.label inner_chars_hi=$1772
-.label setPositionPlayer=$119c {
+.label fill_color_memory=$12a7
+.label newHiscore=$1152
+.label inner_chars_hi=$1781
+.label setPositionPlayer=$11ab {
 }
-.label ramp_cycle_color=$1352 {
-  .label exit=$1371
-  .label loop=$1356 {
+.label ramp_cycle_color=$1361 {
+  .label exit=$1380
+  .label loop=$1365 {
   }
 }
-.label start=$10dd
-.label sprite_y_prev_angle=$1a76
-.label showCircle=$11f3 {
-  .label setmem_outer=$1219
-  .label setmem_inner=$121f
-  .label setmem_middle=$121c
+.label start=$10e2
+.label sprite_y_prev_angle=$1a85
+.label showCircle=$1202 {
+  .label setmem_outer=$1228
+  .label setmem_inner=$122e
+  .label setmem_middle=$122b
 }
-.label loop_menu=$10d3
-.label middle_chars_lo=$1672
+.label loop_menu=$10d8
+.label middle_chars_lo=$1681
