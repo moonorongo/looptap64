@@ -80,3 +80,6 @@
 
 .const space_text_base = colorPtr + $0251
 .const space_text_status = 1 // 0 = hide, 1 = blinking
+
+
+	

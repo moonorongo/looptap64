@@ -1,15 +1,13 @@
 draw_arc:
     jsr randomGenerator
-    ldx random_ptr 
-	//ldx #253
-	stx start_angle
+    lda random_ptr 
+	sta start_angle
 
 	jsr randomGenerator
 	lda random_ptr
 	and #63 // 00011111 (0 - 63)
-	adc #$01 // 1 - 64 (0 gives an error)
+	adc #$01 // 3 - 64 (0 1 2  gives an error)
 	adc start_angle
-	//lda #38
 	sta end_angle
 
 draw_arc_with_start_and_end_angle:
@@ -33,9 +31,13 @@ draw_arc_loop:
 	rts
 
 
+
+/* failed sub
 clear_circle:
-{
-	ldx start_angle
+	txa
+	pha
+
+	ldx old_start_angle:$ff
 
 	// disable caps sprites
 	lda spractive
@@ -45,13 +47,17 @@ clear_circle:
 clear_loop:
 	jsr hideCircle
 	inx
-	cpx end_angle:#$ff // dummy value
-	bne clear_loop	
+	cpx old_end_angle:#$ff // dummy value
+	bne clear_loop
+
+	pla
+	tax
+
 	rts
-}
+*/
 
 
-/*
+
 clear_circle:
 {
 	ldx #00
@@ -67,4 +73,3 @@ clear_loop:
 	bne clear_loop	
 	rts
 }
-*/

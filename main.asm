@@ -1,15 +1,6 @@
 .var music = LoadSid("assets/music.sid")
 BasicUpstart2(init)
 
-/*
-	MEJORAR LIMPIEZA/REDIBUJADO DE CIRCULO
-	  armar una tabla de posiciones seguras
-	  y que la rutina random elija esas posiciones
-	  y a la mierda
-
-	y ya con esto estaria
-*/
-
 #import "inc/const.asm"
 #import "inc/macros.asm"
 #import "inc/sprites.asm"	
@@ -97,10 +88,6 @@ init:
 	stx msbCopyAddress
 	jsr copyToScreenColor
 
-    // show "space to start" message
-	//lda #1
-	//sta space_text_color
-	//jsr set_space_mesage_color
 
 	// enable screen
 	lda screen_control1

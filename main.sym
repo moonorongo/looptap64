@@ -1,92 +1,91 @@
 .label sprite_cap=$880
 .label hit_inside_arc=$1133
-.label copyToScreen=$1270 {
-  .label loop=$1272
-  .label loop4=$129c
-  .label loop2=$1280
-  .label loop3=$128e
+.label copyToScreen=$126d {
+  .label loop=$126f
+  .label loop4=$1299
+  .label loop2=$127d
+  .label loop3=$128b
 }
-.label sprite_y_next_angle=$1a89
-.label outer_chars_lo=$1481
+.label sprite_y_next_angle=$1a86
+.label outer_chars_lo=$147e
 .label init=$1000
-.label updateHiscore=$131a {
-  .label l100=$1336
-  .label l10=$133b
+.label updateHiscore=$1317 {
+  .label l100=$1333
+  .label l10=$1338
 }
-.label loop1=$1355
-.label set_space_mesage_color=$1351
+.label loop1=$1352
+.label set_space_mesage_color=$134e
 .label new_arc=$10f2
 .label end_angle=$1190
-.label randomGenerator=$1262 {
-  .label noEor=$126d
-  .label doEor=$126b
+.label randomGenerator=$125f {
+  .label noEor=$126a
+  .label doEor=$1268
 }
-.label sprite_y_angle=$1a87
+.label sprite_y_angle=$1a84
 .label check_x_gt_start_angle=$1124
-.label fillColor=$12a8
-.label inner_chars_lo=$1881
+.label fillColor=$12a5
+.label inner_chars_lo=$187e
 .label lost_game=$1147
-.label setPositionEndCap=$11dd {
+.label setPositionEndCap=$11da {
 }
-.label updateScore=$12f2 {
-  .label l100=$12ff
-  .label l10=$1304
+.label updateScore=$12ef {
+  .label l100=$12fc
+  .label l10=$1301
 }
 .label menu=$10cc
 .label main_loop=$1100 {
 }
 .label draw_arc=$1167
-.label sprite_x_next_angle=$1985
-.label copyToScreenColor=$12bb {
-  .label loop=$12bd
-  .label loop4=$12e7
-  .label loop2=$12cb
-  .label loop3=$12d9
+.label sprite_x_next_angle=$1982
+.label copyToScreenColor=$12b8 {
+  .label loop=$12ba
+  .label loop4=$12e4
+  .label loop2=$12c8
+  .label loop3=$12d6
 }
-.label middle_chars_hi=$1581
+.label middle_chars_hi=$157e
 .label start_angle=$117f
 .label sprite_player=$8c0
-.label screen=$1b8f
-.label sprite_x_angle=$1983
-.label sprite_x_prev_angle=$1981
-.label outer_chars_hi=$1381
+.label screen=$1b8c
+.label sprite_x_angle=$1980
+.label sprite_x_prev_angle=$197e
+.label outer_chars_hi=$137e
 .label skip_dec_inmunity=$110b
-.label space_text_color=$1354
+.label space_text_color=$1351
 .label irqMusic=$115b
-.label hideCircle=$1232 {
-  .label setmem_outer=$1258
-  .label setmem_inner=$125e
-  .label setmem_middle=$125b
+.label hideCircle=$122f {
+  .label setmem_outer=$1255
+  .label setmem_inner=$125b
+  .label setmem_middle=$1258
 }
-.label spacebar_color_ramp=$1b89
+.label spacebar_color_ramp=$1b86
 .label clear_circle=$1197 {
-  .label clear_loop=$11a2
-  .label end_angle=$11a7
+  .label clear_loop=$11a1
 }
 .label draw_arc_loop=$118b
 .label skip_by_inmunity=$1121
 .label next=$1140
 .label draw_arc_with_start_and_end_angle=$117e
-.label setPositionStartCap=$11b8 {
+.label setPositionStartCap=$11b5 {
 }
 .label loop_wait=$10ce {
 }
-.label fill_color_memory=$12a7
+.label fill_color_memory=$12a4
 .label newHiscore=$1152
-.label inner_chars_hi=$1781
-.label setPositionPlayer=$11ab {
+.label inner_chars_hi=$177e
+.label setPositionPlayer=$11a8 {
 }
-.label ramp_cycle_color=$1361 {
-  .label exit=$1380
-  .label loop=$1365 {
+.label ramp_cycle_color=$135e {
+  .label exit=$137d
+  .label loop=$1362 {
   }
 }
 .label start=$10e2
-.label sprite_y_prev_angle=$1a85
-.label showCircle=$1202 {
-  .label setmem_outer=$1228
-  .label setmem_inner=$122e
-  .label setmem_middle=$122b
+.label sprite_y_prev_angle=$1a82
+.label showCircle=$11ff {
+  .label setmem_outer=$1225
+  .label setmem_inner=$122b
+  .label setmem_middle=$1228
 }
 .label loop_menu=$10d8
-.label middle_chars_lo=$1681
+.label middle_chars_lo=$167e
